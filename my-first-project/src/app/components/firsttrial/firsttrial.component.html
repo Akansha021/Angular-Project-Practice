@@ -1,0 +1,21 @@
+
+<p>{{"Hello " + haveDoc}}</p>
+<h2 *ngIf="haveDoc; else elseBlock">My Folder</h2>
+<ng-template #elseBlock>
+    <h2>My File</h2>
+ </ng-template>
+ <h2>{{errorMssg}}</h2>
+<table class="table table-bordered">
+    <tr class="bg-info">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>email</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td><a [routerLink]="['/users',user.id]">{{user.id}}</a></td>
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+    </tr>
+</table>
